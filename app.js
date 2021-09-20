@@ -94,3 +94,42 @@ function clear() {
     console.log("Operation canceled");
   }
 }
+
+// Call each function to make sure it works.
+console.log("Listing all contacts");
+listAll();
+console.log("Adding a new contact");
+add({
+  name: "Hafliði",
+  email: "h@jons.is",
+  phoneNumber: "1234567",
+});
+
+console.log("Failing to add a new contact");
+add({
+  name: "Hafliði",
+  phoneNumber: "1234567",
+});
+console.log("Listing all contacts");
+listAll();
+
+console.log("Editing a contact");
+edit("h@jons.is", {
+  name: "Svafliði",
+  phoneNumber: "1234567",
+});
+
+console.log("Getting a contact");
+get("h@jons.is");
+
+console.log("Removing a contact");
+remove("j@jons.is");
+
+console.log("Failing to get a contact");
+get("j@jons.is");
+
+console.log("Clearing all contacts");
+clear();
+
+console.log("Verifying that clear worked by listing all contacts");
+listAll();
